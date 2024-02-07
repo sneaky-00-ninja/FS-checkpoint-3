@@ -1,0 +1,49 @@
+print('***Exercise 1***')
+var_string = "This is a string"
+var_num = 45
+var_list = ["milk", "eggs", "bread"]
+var_bool = True
+print(type(var_string))
+print(type(var_num)) 
+print(type(var_list)) 
+print(type(var_bool)) 
+
+print()
+print('***Exercise 2***')
+var_letters = var_string[:3]
+print(var_letters)
+
+print()
+print('***Exercise 3***')
+first_element = var_list[0]
+print(first_element)
+
+print()
+print('***Exercise 4***')
+new_num = var_num + 10
+print(new_num)
+
+print()
+print('***Exercise 5***')
+last_element = var_list[-1]
+print(last_element)
+
+print()
+print('***Exercise 6***')
+names = 'harry,alex,susie,jared,gail,conner'
+new_list = names.split(',')
+print(new_list)
+
+print()
+print('***Exercise 7***')
+first_word = var_string[0:4].upper()
+new_string = first_word + " " + var_string[5:]
+print(new_string)
+
+print()
+print('***Exercise 8***')
+print(f"The magic number is {var_num}.")
+
+print()
+print('***Exercise 9***')
+print('"Hello world"')
