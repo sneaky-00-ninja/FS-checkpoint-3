@@ -1,0 +1,173 @@
+Questions: 
+
+
+
+1)... 
+For what do we use Classes for in Python?
+
+Each class creates a new type of object, and multiple instances of this object can easily be made by using the class. 
+It is like a blueprint or template for creating objects or instances. 
+Using classes makes a program more efficient because is re-uses code. 
+
+A class can contain methods. (A method is like an internal function inside of a class.) 
+Methods within a class can be used for modifying the state of objects or instances. 
+It usually makes sense to use classes when with more than just one single method, 
+because a single function will be sufficient and is more straight forward. 
+
+
+((((Use functions when your code is action focused. 
+and classes when your code is state focused. )))
+
+
+
+
+
+
+2)... 
+Which method is automatically executed when a class is instantiated?
+
+The __init__ ("dunder init") constructor method will run each time you create a class instance. 
+When this happens one or more objects are initialized, 
+and this constructor method assigns values or attributes to these objects. 
+
+
+
+
+
+
+
+3)... 
+What are the three API verbs?
+
+The three most common API verbs are GET, PUT, and POST. 
+PATCH and DELETE are also common. 
+
+GET is used to request data information from a server or database. It will not make any changes to the server/database. 
+PUT will update an existing variable on the server/database. Overwriting the previous value. 
+POST will create a new resource or variable on the server/database. 
+PATCH is similar to PUT, but will only partially modify the resource/variable on the server/database. 
+DELETE will remove a variable on the server/database. 
+
+
+
+
+
+
+
+4)... 
+Is MongoDB a SQL or NoSQL database?
+
+MongoDB is unstructured. Therefore it is classed as a NoSQL database. 
+
+
+
+
+
+
+
+5)... 
+What is an API?
+
+It stands for Application Programming Interface. 
+It is a tool used for sending requests and recieving responses from a local or external database. 
+
+
+
+
+
+
+
+6)... 
+What is Postman?
+
+The Postman application is an easy to use API client, a software tool for building and using APIs. 
+It is a user-friendly tool for communication with external APIs, 
+allowing you to interact by using the API verbs mentioned in question. 
+It is versitile and can be used with a wide range of programming languages. 
+
+
+
+
+
+
+7)... 
+What is polymorphism?
+
+Polymorphism is when a function or class has multiple forms. 
+The name translates to "many forms", which accurately describes what polymorphism is, 
+it is when the function/class has one name but more than one way of being used. 
+Child classes will use methods with the same name as methods in it's parent class. 
+
+
+
+
+
+
+8)... 
+What is a dunder method?
+
+Python has a number of predefined methods who's names begin and end with a double underscore. 
+these are known as dunder methods. The word “dunder” is short for “double underscore”. 
+Dunder methods allow instances of a class to work with the built-in functions and operators of python. 
+Some common dunder methods are: __init__,  __add__ ,  __len__ , __new__ , __repr__  and __str__ . 
+The __init__ method was breifly visited in question 2. 
+Some dunder methods are called in the background without when operators are used, 
+such as the __add__ method which is used internally when a "+" is utilised for adding. 
+
+
+
+
+
+
+9)... 
+What is a python decorator?
+
+Decorators are used to modify the behaviour of function or class.  
+With a decorator you can extend the functionality of a function without actually changing the original function. 
+You can spot a decorator easily as it begins with an @ symbol. 
+This symbol is followed by the name of a function defined earlier in the program, 
+and the code written in this earlier defined function will be utilised before the new code in the decorator function. 
+
+Example to show layout and order (imcomplete code)... 
+def original_fun(func):
+    def first_stuff():
+         primary code goes here. 
+
+@original_fun 
+def second_stuff() 
+        new secondary code goes here. 
+         
+    
+
+
+
+
+
+
+Exercise:     
+Create a Python class called User that uses the init method and creates a username and a password. 
+Create an object using the class.
+
+SEE FOLLOWING CODE... 
+
+
+
+class User:
+  
+    def __init__(self, username, password):
+      
+        print("Creating the User object")
+      
+        self.username = username
+      
+        self.password = password
+
+
+user1 = User("Joe", "Smith")
+
+print("Username is: " + user1.username)
+
+print("Password is: " + user1.password)
+
+
+
