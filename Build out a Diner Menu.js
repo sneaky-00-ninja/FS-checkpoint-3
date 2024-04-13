@@ -10,7 +10,7 @@ var timeHour = "midnight";
 var deal = false;
 var currentMenu = [];
 
-const comments = ["Yummy.", "Nice!!!", "My dad had that yesterday.", "That is a popular choice.", "Mmmm, I think I'll have that too.", "I like that.", "I knew you'd choose that."]; 
+const comments = ["Yummy.", "Nice!!!", "My dad had that yesterday.", "That is a popular choice.", "Mmmm, I think I'll have that too.", "I knew you'd choose that."]; 
 
 const prices = new Map([  
   	["toast", 1],
@@ -111,7 +111,6 @@ const enterHour = () => {
 	alert("Schedule... \n 6:00-10:59 breakfast \n 11:00-16:59 lunch \n 17:00-21:59 dinner")
   timeHour = prompt(`What is the current Hour of the day, in 24:00 format? \n Please enter a value between 00 and 23`);
   console.log(timeHour);
-  //timeHour = Number(timeHour);
   if (timeHour == null || timeHour == "") {
     alert("You must enter a number!!!");
     enterHour ();    
@@ -126,7 +125,6 @@ const enterHour = () => {
       enterHour ();
     }    
   }
-//console.log("Hour is " + timeHour);
 }
 
 
@@ -179,7 +177,6 @@ const dealChoice = () => {
     side();
     side();
 	multiplier = 1.5;
-    //alert(`Your order is... \n ${ordered} \n Total cost is... € ${totatCost}`);
   } 
 }  
 
@@ -214,7 +211,7 @@ const lunch = () => {
 
 const dinner = () => {
 	multiplier = 1.5;
-	alert("Please note that dinner items costs 50% more than lunchtime prices!!!");  
+	alert("Please note that dinner items costs 50% more than lunchtime prices!!! \n (and this menu only shows the lunchtime prices)");  
 	alert("what would you like to drink?");
 	currentMenu = ShowDrinkMenu;
 	takeOrder();
@@ -241,7 +238,6 @@ const waitressComment = () => {
 	ordered.push(currentItem);
 	var currentComment = comments[(Math.floor(Math.random() * comments.length))];
 	alert(`${currentItem} , ${currentComment} `);
-		//alert(comments[(Math.floor(Math.random() * comments.length))]);  
 	alert(`That costs € ${currentItemCost}`);
 }
 
@@ -250,25 +246,26 @@ const waitressComment = () => {
 const takeOrder = () => {
 	orderOpen = true;
 	while (orderOpen == true) {
-		//currentItem = prompt("What item do you choose now? \n enter END to finish this part of the order.");
-		currentItem = prompt(`What item do you choose now? \n ${currentMenu} \n \n (enter NO to finish this part of the order)`);
+		currentItem = prompt(`What item do you choose now? \n ${currentMenu} \n \n (enter "0" to finish this part of the order)`);
 		if (currentItem === null || currentItem === ""  ) {
-			alert("you must enter an item. \n (or 'NO' to continue.")
+			alert(`you must enter an item. \n or "0" (zero) to continue.`)
 			currentItem = "no entry";
 		} else {
 			currentItem = currentItem.toLowerCase();
-			if (currentItem === "no") {
+			if (currentItem === "0") {
 				orderOpen = false;
 				alert("Okay.");
-			} else {
+			} else if (prices.has(currentItem)) {
 				waitressComment();
 				var more = confirm("Anything else?");
 				if (more === false){
 					orderOpen = false;
 				}
+			} else {
+			alert("HAHA! That is not even on the menu. \n \n Make sure you are reading our current meun. \n (or... maybe check your spelling?)")
+			currentItem = "no entry";
 			}
 		}
-			
 	}  // end of while loop. 
 }  // end of takeOrder function. 
 
