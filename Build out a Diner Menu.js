@@ -182,10 +182,10 @@ const dealChoice = () => {
 
 
 const breakfast = () => {
-	alert("what would you like to drink?");
+	alert("What would you like to drink?"); 
 	currentMenu = showBrekDrinkMenu;
 	takeOrder();
-	alert("what would you like to eat?");
+	alert("And, what would you like to eat?");
 	currentMenu = showBrekMenu;
 	takeOrder();
 	alert(`Your order is... \n ${ordered} \n Total cost is... € ${totatCost}`);
@@ -215,7 +215,7 @@ const dinner = () => {
 	alert("what would you like to drink?");
 	currentMenu = ShowDrinkMenu;
 	takeOrder();
-	alert("what would you like to eat? ...");
+	alert("And to eat ...");
 	dealChoice();
 	if (deal === false) {
 		alert("For entree...");
@@ -246,7 +246,7 @@ const waitressComment = () => {
 const takeOrder = () => {
 	orderOpen = true;
 	while (orderOpen == true) {
-		currentItem = prompt(`What item do you choose now? \n ${currentMenu} \n \n (enter "0" to finish this part of the order)`);
+		currentItem = prompt(`What item do you choose? \n ${currentMenu} \n \n (enter "0" to finish this section of the menu)`);
 		if (currentItem === null || currentItem === ""  ) {
 			alert(`you must enter an item. \n or "0" (zero) to continue.`)
 			currentItem = "no entry";
@@ -257,12 +257,12 @@ const takeOrder = () => {
 				alert("Okay.");
 			} else if (prices.has(currentItem)) {
 				waitressComment();
-				var more = confirm("Anything else?");
+				var more = confirm("Anything else from this section of the menu?"); 
 				if (more === false){
 					orderOpen = false;
 				}
 			} else {
-			alert("HAHA! That is not even on the menu. \n \n Make sure you are reading our current meun. \n (or... maybe check your spelling?)")
+			alert("HAHA! That is not even on the menu. \n \n (Make sure you are reading our current menu... \n or ... maybe check your spelling?)");
 			currentItem = "no entry";
 			}
 		}
